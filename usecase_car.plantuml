@@ -1,0 +1,32 @@
+@startuml
+
+!define LIGHTGREEN
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+' your UML '
+actor Admin
+
+left to right direction
+Admin --> (Car)
+note "View, add, edit, and delete vehicle information" as N1
+(Car) .. N1
+(N1) ..> (Login of the admin) : <<include>>
+
+Admin --> (User)
+note "View, add, edit, and delete user information" as N2
+(User) .. N2
+(N2) ..> (Login of the admin) : <<include>>
+
+Admin --> (Employee)
+note "View, add, edit, and delete employee information" as N3
+(Employee) .. N3
+(N3) ..> (Login of the admin) : <<include>>
+
+Admin --> (Report)
+note "View, add, edit, and delete report information" as N4
+(Report) .. N4
+(N4) ..> (Login of the admin) : <<include>>
+
+(Login of the admin) ..> (Check the administrator's credentials) : <<include>>
+
+
+@enduml

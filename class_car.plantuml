@@ -1,0 +1,52 @@
+@startuml
+!define LIGHTGREEN
+!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+' your UML '
+class Car {
+  +Car code : String 
+  +Car manufacturer : String
+  +Car name : String
+  +Range of car : String
+  +Car color : String
+  +Additional information about the car : String
+  +Number of cars : String  
+  +Car import date : String 
+  +Car price : String  
+}
+
+class User {
+   +Customer's code : String
+   +Full name of customer : String
+   +User Address : String
+   +User phone number : String 
+   +User email : String
+   +The price of the car purchased : String
+}
+
+class Employee {
+   +Employee code : String
+   +Employee's full name : String
+   +Employee address : String
+   +Employee phone number : String 
+   +Account employee : String
+   +Password employee : String
+   +Employee email : String
+   +Employee salary : String 
+}
+
+class Report {
+   +Report code : String
+   +Report name : String
+   +Day report : String 
+   +Car import price : String 
+   +Revenue : String 
+   +Salary employee: String 
+   +Total money : String 
+}
+
+Report "0..*" o-- "0..1" Car
+Report "0..*" o-- "0..1" Employee
+User "0..1*" o-- "0..*" Car
+Report "0..1" -- "0..1" User
+
+@enduml
